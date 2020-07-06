@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">first</h5>
+        <p class="card-text">
+            난이도 <br>
+            시험일정<br>
+            접수마감<br>
+        </p>
+        <a button type="button" class="btn btn-outline-success" href='{% url "japanese:first" %}'>자세한 정보 보러가기</a>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">second</h5>
+          <p class="card-text">
+              난이도 <br>
+              시험일정<br>
+              접수마감<br>
+          </p>
+          <a button type="button" class="btn btn-outline-success" href='{% url "japanese:second" %}'>자세한 정보 보러가기</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">third</h5>
+          <p class="card-text">
+              난이도 <br>
+              시험일정<br>
+              접수마감<br>
+          </p>
+          <a button type="button" class="btn btn-outline-success" href='{% url "japanese:third" %}'>자세한 정보 보러가기</a>
+        </div>
+      </div>
+  </div>
+{% endblock %}
