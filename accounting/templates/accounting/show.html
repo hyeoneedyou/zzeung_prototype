@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>상세보기 페이지</h1>
+<h3>글 제목 : {{ post.title }} </h3><br>
+<h3>취득이유 : {{ post.reason }} </h3><br>
+<h3>기초지식 : {{ post.base }} </h3><br>
+<h3>이전 급수 취득여부 또는 관련 자격증 취득여부 : {{ post.experience }} </h3><br>
+<h3>난이도 : {{ post.difficulty }} </h3><br>
+<h3>추천도 : {{ post.recommend }} </h3><br>
+<h3>공부법 : {{ post.content }} </h3><br>
+<h3>작성 시각 : {{ post.created_at }} </h3><br>
+{% endblock %}
