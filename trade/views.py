@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 
-def list(request):
-    return render(request, 'trade/list.html')
+def main(request):
+    return render(request, 'trade/main.html')
 
 
 def first(request):

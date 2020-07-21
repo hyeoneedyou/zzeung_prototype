@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
-def list(request):
-    return render(request, 'computer/list.html')
+def main(request):
+    return render(request, 'computer/main.html')
 
 
 def first(request):

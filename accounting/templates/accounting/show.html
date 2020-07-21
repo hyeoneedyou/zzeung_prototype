@@ -9,4 +9,11 @@
 <h3>추천도 : {{ post.recommend }} </h3><br>
 <h3>공부법 : {{ post.content }} </h3><br>
 <h3>작성 시각 : {{ post.created_at }} </h3><br>
+
+{% if post.image %}
+	<img src ="{{ post.image.url }}" alt="">
+{% endif %}
+
+<a href = "{% url 'accounting:update' post.pk %}" class="btn btn-primary">수정하기</a>
+<a href = "{% url 'accounting:delete' post.pk %}" class="btn btn-danger">삭제하기</a>
 {% endblock %}

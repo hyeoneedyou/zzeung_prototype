@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>
+       후기 수정하기
+    </h1>
+    <form action="{% url 'accounting:update' post.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label>글 제목</label>
+            <input type="text" class="form-control" name="title" value="{{ post.title }}">
+        </div>
+        <div class="form-group">
+            <label>취득이유</label>
+            <textarea class="form-control" name="reason">{{ post.reason }}</textarea>
+        </div>
+        <div class="form-group">
+            <label>기초지식</label>
+            <textarea class="form-control" name="base">{{ post.base }}</textarea>
+        </div>
+        <div class="form-group">
+            <label>이전 급수 취득여부 또는 관련 자격증 취득여부</label>
+            <textarea class="form-control" name="experience">"{{ post.experience }}</textarea>
+        </div>
+        <div class="form-group">
+            <label>난이도</label>
+            <textarea class="form-control" name="difficulty">{{ post.difficulty }}</textarea>
+            
+        </div>
+        <div class="form-group">
+            <label>추천도</label>
+            <textarea class="form-control" name="recommend">{{ post.recommend }}</textarea>
+        </div>
+        <div class="form-group">
+            <label>공부법</label>
+            <textarea class="form-control" name="content">{{ post.content }}</textarea>
+        </div>
+        <input type="file", name="image">
+        <input type="submit" value="글 수정" class="btn btn-outline-primary">
+    </form>
+</div>
+{% endblock %}

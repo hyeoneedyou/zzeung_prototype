@@ -1,3 +1,31 @@
-<p>
-    2
-</p>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>second</h1>
+    <p>
+        홈페이지:<br>
+        시행기관:<br>
+        응시자격:<br>
+        시험일정:<br>
+        접수기간:<br>
+        시험과목:<br>
+        응시료:<br>
+    </p>
+    <a button type="button" class="btn btn-outline-primary" href='{% url "accounting:review2" %}'>후기쓰기</a>
+</div>    
+<div class="row">
+    {% for post in posts2 %}
+    <div class="col-md-4 col-12">
+    <div class="card" style="width: 18rem; margin-top: 20px;">
+    <div class="card-body">
+    <h5 class="card-title">{{ post.title }}</h5>
+    <p>{{ post.created_at }}</p>
+    <a href='{% url "accounting:show" post.pk %}' class="btn btn-primary">자세히보기</a>
+    </div>
+    </div>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
