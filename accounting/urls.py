@@ -12,7 +12,7 @@ urlpatterns = [
     path('review2/', review2, name="review2"),
     path('create/', create, name="create"),
     path('create2/', create2, name="create2"),
-    path('/show/<int:id>', show, name="show"),
+    path('show/<int:id>', show, name="show"),
     path('update/<int:id>/', update, name="update"),
     path('delete/<int:id>/', delete, name="delete"),
 ]

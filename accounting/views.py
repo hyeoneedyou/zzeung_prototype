@@ -31,6 +31,7 @@ def review2(request):
 def create(request):
     if request.method =="POST":
         title = request.POST.get('title')
+        user = request.user
         reason = request.POST.get('reason')
         base = request.POST.get('base')
         experience = request.POST.get('experience')
@@ -38,13 +39,14 @@ def create(request):
         recommend = request.POST.get('recommend')
         content = request.POST.get('content')
         image = request.FILES.get('image')
-        Post.objects.create(image=image, title=title, reason=reason, base=base, experience=experience, difficulty=difficulty, recommend=recommend, content=content)
+        Post.objects.create(user=user, image=image, title=title, reason=reason, base=base, experience=experience, difficulty=difficulty, recommend=recommend, content=content)
         return redirect('accounting:first')
 
 
 def create2(request):
     if request.method =="POST":
         title = request.POST.get('title')
+        user = request.user
         reason = request.POST.get('reason')
         base = request.POST.get('base')
         experience = request.POST.get('experience')
@@ -52,7 +54,7 @@ def create2(request):
         recommend = request.POST.get('recommend')
         content = request.POST.get('content')
         image = request.FILES.get('image')
-        Post2.objects.create(image=image, title=title, reason=reason, base=base, experience=experience, difficulty=difficulty, recommend=recommend, content=content)
+        Post2.objects.create(user= user, image=image, title=title, reason=reason, base=base, experience=experience, difficulty=difficulty, recommend=recommend, content=content)
         return redirect('accounting:second')
 
 
@@ -74,7 +76,7 @@ def update(request,id):
         post.image = request.FILES.get('image')
         post.save()
         return redirect('accounting:main')
-    return render(request,'accounting/update.html', {'post':post})
+        return render(request,'accounting/update.html', {'post':post})
 
 
 def delete(request, id): 

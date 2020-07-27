@@ -31,5 +31,6 @@ urlpatterns = [
     path('hoteltour/', include('hoteltour.urls')),
     path('japanese/', include('japanese.urls')),
     path('trade/', include('trade.urls')),
+    path('accounts/', include('allauth.urls')),
     ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
