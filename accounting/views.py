@@ -60,6 +60,10 @@ def create2(request):
 
 def show(request, id):
     post = Post.objects.get(pk=id)
+    A = post.view_count
+    A = A + 1
+    post.view_count = A
+    post.save() 
     return render(request,'accounting/show.html', {'post': post})
 
 

@@ -23,6 +23,10 @@ def create(request):
 
 def show(request, id):
     post = Post.objects.get(pk=id)
+    A = post.view_count
+    A = A + 1
+    post.view_count = A
+    post.save() 
     return render(request,'board/show.html', {'post': post})
 
 

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length= 50, null=True)
-    user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, related_name="user")
+    user = models.ForeignKey(User, on_delete = models.CASCADE, null=True, related_name="user") #이거 보임? Post2가 어디에 사용하려고 만든 모델이야?
     reason = models.TextField(null=True)
     base = models.TextField(null=True)
     experience = models.TextField(null=True)
